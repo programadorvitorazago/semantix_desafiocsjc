@@ -1,0 +1,24 @@
+#----------------------------------------------
+# Arquivo Docker utilizado no build
+# Programador: Vitor Zago
+# Data: 14/04/2020
+# Versão 1.0
+#----------------------------------------------
+
+# Use the official image as a parent image.
+FROM python:3.8
+
+# Set the working directory.
+WORKDIR /usr/src/app
+
+# Copy the file from your host to your current location.
+# COPY package.json .
+
+# Run the command inside your image filesystem.
+RUN pip install requests
+
+# Run the specified command within the container.
+CMD [ "python3", "-u", "Desafio_ProjetoSJC.py" ]
+
+# Copy the rest of your app's source code from your host to your image filesystem.
+COPY . .
